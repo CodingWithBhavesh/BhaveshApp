@@ -9,21 +9,26 @@ export default function TextForm(props) {
 
   const handleUpClick = ()=>{
     // console.log('Uppercase was clicked' + text)
-    let newText= text.toUpperCase()
-    setText(newText)
-    props.showAlert("Converted to Uppercase","success")
-  }
+      let newText= text.toUpperCase()
+      setText(newText)
+      props.showAlert("Converted to Uppercase","success")
+    }
   const handleUpClick2 =()=>{
-    let newText=text.toLowerCase()
-    setText(newText);
-  } 
-  const handleUpClick3 =()=>{
-    let newText=text.toLocaleLowerCase()
-    setText(newText);
-  } 
-  const handleClear =()=>{
-    let newText= ' ';
-    setText(newText);
+      let newText=text.toLowerCase()
+      setText(newText);
+      props.showAlert("Converted to LowerCase","success");
+    } 
+    
+    
+    const handleClear =()=>{
+      let newText= ' ';
+      setText(newText);
+      props.showAlert("Clear text Successfully","success");
+  }
+
+  const handleCopy = ()=>{
+    navigator.clipboard.writeText(text);
+    props.showAlert('Text Copied;','sucess')
   }
 
   // const handleUpClick4 =()=>{
@@ -50,6 +55,8 @@ export default function TextForm(props) {
   //   text.split(" ").filter((elemt)=>{ return elemt.length!==0} )
   //   returrn
   // }
+  let forCounting = 0.008*text.split(" ").filter((elemt)=>{ return elemt.length!==0 } ).length;
+  
 
   return (
     <>
@@ -58,18 +65,21 @@ export default function TextForm(props) {
       <h2 >{props.heading}</h2> {/* we can also use like that in all individiusll.. className={`text-${props.mode==='light'?'dark':'light'}`} it means agr modw light h to text-dark kr do vrna text-light kro {text-light,dark is property}
       */}
         {/* <div className="mb-3"> */}
-        <textarea style={{backgroundColor:props.mode==='light'?'white':'rgb(23 13 109)', color:props.mode==='light'?'black':'white'}}   className={`Form-control`} value={text} onChange={handleOnChange} id='myBox'  rows='10' cols={100} ></textarea>  {/* we can use placeholder='Enter Text Here' but its color orashn krying */}
+        <textarea  spellCheck='false' style={{backgroundColor:props.mode==='light'?'white':'#515151', color:props.mode==='light'?'black':'white'}}   className={`Form-control`} value={text} onChange={handleOnChange} id='myBox'  rows='10' cols={100} ></textarea> 
+         {/* we can use placeholder='Enter Text Here' but its color orashn krying */}
         </div>
-        <button   className="btn btn-sm btn-outline-primary mx-1 my-1" onClick={handleUpClick}>ToUpperCase</button>
-        <button   className="btn btn-sm btn-outline-primary mx-1 my-1" onClick={handleUpClick2}>ToLowerCase</button>
-        <button   className="btn btn-sm btn-outline-primary mx-1 my-1" onClick={handleUpClick3}>ToNothing</button>
-        <button   className="btn btn-sm btn-outline-primary mx-1 my-1" onClick={handleClear}>Clear Text</button>
+        {/* style={{border:'1px solid white',color:props.mode==='light'?'blue':'white'}}  */}
+        <button disabled={text.length===0}   className=" mx-3 my-1" onClick={handleUpClick}>UPPERCASE</button>
+        <button  disabled={text.length===0}    className=" btn-sm  mx-3 my-1" onClick={handleUpClick2}>lowercase</button>
+        <button  disabled={text.length===0}   className=" btn-sm btn-secondary mx-3 my-1" onClick={handleClear}>Clear Text</button>
+        <button  disabled={text.length===0}   className=" btn-sm btn-secondary mx-3 my-1" onClick={handleCopy}>Copy text </button>
     {/* </div> */}
     <div className="container my-3"  style={{color:props.mode==='light'?'black':'white'}}>
       <h2 >More Information about text above</h2>
-      <p > {text.split(" ").filter((elemt)=>{ return elemt.length!==0 } ).length} Words AND {text.length} Characters</p>
+      <p > {text.split(/\s/).filter((elemt)=>{ return elemt.length!==0 } ).length} Words AND {text.length} Characters</p>
       {/* filter function is uded to extract only those elements fro list or collecton that satidfy specoific condition like the function above */}
-      <p>{0.008*text.split(" ").filter((elemt)=>{ return elemt.length!==0 } ).length} Minutes take to read this.</p>
+      {/* {forCounting variable is defned above} thats is 0.008*text.split(" ").filter((elemt)=>{ return elemt.length!==0 } ).length */}
+      <p> {forCounting} Minutes and {forCounting*60} Second take to read this.</p>
     </div>
     <div className="container my-1" style={{color:props.mode==='light'?'black':'white'}}>
       <h3 >Preview</h3>
