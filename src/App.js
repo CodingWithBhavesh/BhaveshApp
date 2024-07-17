@@ -4,13 +4,13 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
-import Nopage from './components/Nopage';
-import {
-  BrowserRouter,
-  Route,
-  Routes
+// import Nopage from './components/Nopage';
+// import {
+//   BrowserRouter,
+//   Route,
+//   Routes
  
-} from "react-router-dom";
+// } from "react-router-dom";
 
 
 
