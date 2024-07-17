@@ -80,16 +80,25 @@ function App() {
     <>
      {/* <Navbar title="Bhavesh's App" secondcomponents="About"/>  */}
     {/* <Navbar/> */}
-    <Navbar title="Bhavesh's App" components={'Clones'} aboutText={'About'} mode={mode} about={About} toggleMode={toggleMode} />
-    <Alert alert={alert} toggleMode={toggleMode}/>
-    <BrowserRouter>   
+      <Navbar title="Bhavesh's App" components={'Clones'} aboutText={'About'} mode={mode} about={About} toggleMode={toggleMode} />
+      <Alert alert={alert} toggleMode={toggleMode}/>
+
+    <div className='container my-3'>
+      <TextForm showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/>
+      </div>
+    
+    
+    
+    
+    
+    {/* <BrowserRouter basename='/Text-Converter'>   
     <Routes>
-      <Route path='/'  element={ <div className='container my-3'><TextForm showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/></div>}/>
+      <Route exact path='/Text-Converter'  element={ <div className='container my-3'><TextForm showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/></div>}/>
       <Route path='/about' element={<div className='container my-3'><About/></div>}/>
       <Route path='/textform' element={ <div className='container my-3'><TextForm showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/></div> }/>
       <Route path='*' element={<Nopage/>}></Route>
-   </Routes>
-   </BrowserRouter>
+   </Routes> 
+   </BrowserRouter> */}
 
       {/* </div> */}
    {/* <div className="container"> */}
