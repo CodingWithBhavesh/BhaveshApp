@@ -13,3 +13,24 @@
       display: none;
     }
   }
+
+  .moreinf{
+    color: aquamarine;
+  }
+  .heading-moreinf{
+    /* background-color: red; */
+    color: red;
+  }
+  .mainheading{
+    color: cadetblue;
+  }
+  /* .button{
+    background-color:blue;
+    color: aliceblue;
+  } */
+   #preview{
+    color:burlywood;
+   }
+   #preview-msg{
+    color:blanchedalmond
+   }
