@@ -20,7 +20,7 @@ export default function Navbar(props) {
                 {/* <a className="nav-link " aria-current="page" href='/About'>{props.aboutText}</a> */}
               </li>
               <li className="nav-item">
-                {/* <a className="nav-link" href="/">{props.components}</a> */}
+                <a className="nav-link" href="/About">{props.components}</a>
               </li>
             </ul>
           <div className="d-flex">
