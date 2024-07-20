@@ -114,8 +114,42 @@ export default function TextForm(props) {
   //   text.split(" ").filter((elemt)=>{ return elemt.length!==0} )
   //   returrn
   // }
-  let forCounting = 0.008*text.split(" ").filter((elemt)=>{ return elemt.length!==0 } ).length;
+  // const button = document.getElementsByClassName ('button');
+  //   const bbb=()=>{
+    //     if(button!='disabled'){
+//       button.style.backgroundColor ="red"
+//     }
+//     else{
+//         button.style.backgroundColor ="pink"
+
+//       }
+//     }
+
+// }
+  // const userConfirmed = window.confirm("Do you want to proceed?");
+  // if (userConfirmed) {
+  //   console.log("User selected Yes");
+  //   // Add your logic for Yes option here
+  // } else {
+  //   console.log("User selected No");
+  //   // Add your logic for No option here
+  // }
   
+  let forCounting = 0.008*text.split(" ").filter((elemt)=>{ return elemt.length!==0 } ).length;
+  let buttonStyle =()=>{
+    return{
+      color:props.mode==='light'?'black' : 'white',
+    }
+  }
+  let textareaStyle=()=>{
+    return{
+      // color: 'brown    ',
+      resize:"none",
+      backgroundColor:props.mode==='light'?'white':'#515151',
+      color:props.mode==='light'?'black':'white',
+
+    }  
+  }
 
   return (
     <>
@@ -123,16 +157,16 @@ export default function TextForm(props) {
     <div className='container my-3' style={{color:props.mode==='light'?'black':'white'}}>
       <h2 className='mainheading' >{props.heading}</h2> {/* we can also use like that in all individiusll.. className={`text-${props.mode==='light'?'dark':'light'}`} it means agr modw light h to text-dark kr do vrna text-light kro {text-light,dark is property}*/}
         <div className="mb-3">
-        <textarea spellCheck='false' style={{resize:"none",backgroundColor:props.mode==='light'?'white':'#515151', color:props.mode==='light'?'black':'white'}}   className='Form-control textArea' value={text} onChange={handleCombineChange} id='myBox'  rows='10' cols='100' ></textarea> 
+        <textarea spellCheck='false' style={textareaStyle()}   className='Form-control textArea' value={text} onChange={handleCombineChange} id='myBox'  rows='10' cols='100' ></textarea> 
          {/* we can use placeholder='Enter Text Here' but its color orashn krying */}
         </div>
-        {/* style={{border:'1px solid white',color:props.mode==='light'?'blue':'white'}}  */}
-        <button  disabled={text.length===0}          className=" button btn  btn-lg mx-3 my-1"           onClick={handleUpClick}>UPPERCASE</button>
-        <button  disabled={text.length===0}          className="button btn btn-lg mx-3 my-1"            onClick={handleUpClick2}>lowercase</button>
-        <button  disabled={text.length===0}          className="button btn btn-lg mx-3 my-1"            onClick={handleClear}>Clear Text</button>
-        <button  disabled={text.length===0}          className="button btn btn-lg mx-3 my-1"            onClick={handleCopy}>Copy text </button>
-        <button  disabled={history.length === 0}     className="button mobile-only btn btn-lg mx-3 my-1" onClick={handleUndo}> Undo </button>        
-        <button  disabled={redoStack.length === 0}   className="button mobile-only btn btn-lg mx-3 my-1" onClick={handleRedo}> Redo</button>    
+        {/* style={{border:'1px solid white',color:props.mode==='light'?'blue':'white'}} ,style={{color:props.mode==='light'?'black':'white'}} */}
+        <button  disabled={text.length===0}        style={buttonStyle()}    className=" button btn  btn-lg mx-3 my-1"           onClick={handleUpClick}>UPPERCASE</button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-3 my-1"             onClick={handleUpClick2}>lowercase</button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-3 my-1"             onClick={handleClear}>Clear Text</button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-3 my-1"             onClick={handleCopy}>Copy text </button>
+        <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-3 my-1" onClick={handleUndo}> Undo </button>        
+        <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-3 my-1" onClick={handleRedo}> Redo</button>    
         </div>
     <div className="container my-3"  style={{color:props.mode==='light'?'black':'white'}}>
       <h2 className='heading-moreinf' >More Information about text above</h2>
