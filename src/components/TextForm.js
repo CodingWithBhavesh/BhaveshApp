@@ -161,12 +161,12 @@ export default function TextForm(props) {
          {/* we can use placeholder='Enter Text Here' but its color orashn krying */}
         </div>
         {/* style={{border:'1px solid white',color:props.mode==='light'?'blue':'white'}} ,style={{color:props.mode==='light'?'black':'white'}} */}
-        <button  disabled={text.length===0}        style={buttonStyle()}    className=" button btn  btn-lg mx-3 my-1"           onClick={handleUpClick}>UPPERCASE</button>
-        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-3 my-1"             onClick={handleUpClick2}>lowercase</button>
-        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-3 my-1"             onClick={handleClear}>Clear Text</button>
-        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-3 my-1"             onClick={handleCopy}>Copy text </button>
-        <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-3 my-1" onClick={handleUndo}> Undo </button>        
-        <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-3 my-1" onClick={handleRedo}> Redo</button>    
+        <button  disabled={text.length===0}        style={buttonStyle()}    className=" button btn  btn-lg mx-2 my-1"           onClick={handleUpClick}>UPPERCASE</button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleUpClick2}>lowercase</button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleClear}>Clear Text</button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleCopy}>Copy text </button>
+        <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-1 my-1" onClick={handleUndo}> Undo </button>        
+        <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-1 my-1" onClick={handleRedo}> Redo</button>    
         </div>
     <div className="container my-3"  style={{color:props.mode==='light'?'black':'white'}}>
       <h2 className='heading-moreinf' >More Information about text above</h2>
