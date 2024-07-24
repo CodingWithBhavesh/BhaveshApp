@@ -19,7 +19,7 @@
   }
   .heading-moreinf{
     /* background-color: red; */
-    color: red;
+    color:"props.mode==='light'?'blue':'pink'";
   }
   .mainheading{
     color: cadetblue;
