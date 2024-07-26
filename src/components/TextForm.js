@@ -155,7 +155,7 @@ export default function TextForm(props) {
     <>
 {/*     <div className='container my-3' style={{color:{props.mode==='light'?'dark':'light'}}}>  ismaa color or any property drectly accept string value we should remove braces from it (unnecessary) */}
     <div className='container my-3' style={{color:props.mode==='light'?'black':'white'}}>
-      <h2 className='mainheading' >{props.heading}</h2> {/* we can also use like that in all individiusll.. className={`text-${props.mode==='light'?'dark':'light'}`} it means agr modw light h to text-dark kr do vrna text-light kro {text-light,dark is property}*/}
+      <h1 className='mainheading' >{props.heading}</h1> {/* we can also use like that in all individiusll.. className={`text-${props.mode==='light'?'dark':'light'}`} it means agr modw light h to text-dark kr do vrna text-light kro {text-light,dark is property}*/}
         <div className="mb-3">
         <textarea spellCheck='false' style={textareaStyle()}   className='Form-control textArea' value={text} onChange={handleCombineChange} id='myBox'  rows='10' cols='100' ></textarea> 
          {/* we can use placeholder='Enter Text Here' but its color orashn krying */}
