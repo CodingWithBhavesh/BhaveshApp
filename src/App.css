@@ -24,3 +24,47 @@
      font-weight: 400;
     /* color:#C0C0C0;  */
    }
+   .img{
+    height: 2rem;
+    width: 50px;
+    /* border: 1px solid red; */
+    background-image: url(photo.svg);
+    background-size:cover;
+    cursor: pointer;
+    /* object-fit: cover; */
+    }
+   .nighModeImg{
+    display: flex;
+   }
+   .darkModeName{
+    display: flex;
+    align-items: center;
+   }
+   .container1 {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    /* background-color: lightblue; */
+  }
+  
+  .hover-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #2e2e2e;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    /* transition: visibility 0s, opacity 0.5s ease; */
+    }
+  
+  .container1:hover .hover-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  

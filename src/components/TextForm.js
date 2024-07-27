@@ -97,6 +97,18 @@ export default function TextForm(props) {
     setText(event.target.value)
   }
 
+  // document.querySelector('.container').addEventListener('mouseenter', function() {
+  //   const hoverText = this.querySelector('.hover-text');
+  //   hoverText.style.visibility = 'visible';
+  //   hoverText.style.opacity = '1';
+    
+  //   setTimeout(function() {
+  //     hoverText.style.visibility = 'hidden';
+  //     hoverText.style.opacity = '0';
+  //   }, 3000); // 3000 milliseconds = 3 seconds
+  // });
+  
+
 
 
 // const StyledButton = ({ disabled }) => {
@@ -177,6 +189,12 @@ export default function TextForm(props) {
     <div className="container my-1" style={{color:props.mode==='light'?'black':'white'}}>
       <h3 id='preview' >Preview</h3>
       <p id='preview-msg' >{text.length>0?text:"Enter something to get preview(In box above )"}</p>
+
+      <div class="container1">
+      <div className="img" onClick={props.toggleMode}>  </div>
+      <div class="hover-text"> Click to enter dark or light</div>
+      </div>
+      <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'white'}}>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</label>
     </div>
     </>
   )

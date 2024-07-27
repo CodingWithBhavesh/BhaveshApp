@@ -23,11 +23,15 @@ export default function Navbar(props) {
                 <a className="nav-link" href="/About">{props.components}</a>
               </li>
             </ul>
-          <div className="d-flex">
-              <div className="form-check form-switch">
-                    <input className="form-check-input" type="checkbox" role="switch" onClick={props.toggleMode} id="flexSwitchCheckDefault"/>
-                    <label className="form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'white'}}>{'Enable Dark mode'}</label>
-              </div>
+
+      <div className="d-flex">
+        <div class="container1">
+          <div className="img" onClick={props.toggleMode}>  </div>
+            <div class="hover-text"> Click to enter dark or light</div>
+            </div>
+            
+            <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'white'}}>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</label>
+              {/* </div> */}
               {/* <form className="d-flex" role="search">
                 <input
                   className="form-control me-2"
