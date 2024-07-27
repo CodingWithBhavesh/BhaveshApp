@@ -190,11 +190,6 @@ export default function TextForm(props) {
       <h3 id='preview' >Preview</h3>
       <p id='preview-msg' >{text.length>0?text:"Enter something to get preview(In box above )"}</p>
 
-      <div class="container1">
-      <div className="img" onClick={props.toggleMode}>  </div>
-      <div class="hover-text"> Click to enter dark or light</div>
-      </div>
-      <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'white'}}>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</label>
     </div>
     </>
   )

@@ -41,12 +41,12 @@
     align-items: center;
    }
 
-
+/* 
    .container1 {
     position: relative;
     display: inline-block;
     padding: 5px;
-    /* background-color: lightblue; */
+    /* background-color: lightblue; 
   }
   
   .hover-text {
@@ -55,7 +55,7 @@
     background-color: inherit;
     /* background-color: #2e2e2e; */
     /* color is inline */
-    /* color: black; */
+    /* color: black; 
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
@@ -64,11 +64,11 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-    /* transition: visibility 0s, opacity 0.5s ease; */
+    /* transition: visibility 0s, opacity 0.5s ease; 
     }
   
   .container1:hover .hover-text {
     visibility: visible;
     opacity: 1;
   }
-  
+   */
