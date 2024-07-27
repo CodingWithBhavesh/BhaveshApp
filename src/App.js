@@ -32,18 +32,18 @@ function App() {
     // document.body.classList.add('bg-'+color)
     if( mode === "light") {
       document.body.style.backgroundColor ='#2e2e2e'
-      setMode('dark')
-      showAlert("Dark mode enable sucessfully","success")
-      document.title =  'TextTransformation - Dark'
+      setMode('dark');
+      showAlert("Dark mode enable sucessfully","success");
+      document.title =  'TextTransformation - Dark';
       setInterval(() => {
-        document.title =  'TextTransformation is amazing app'
+        document.title =  'TextTransformation is amazing app';
       }, 2000);
       setInterval(() => {
-        document.title =  'Install (bhavesh) My app'
+        document.title =  'Install (bhavesh) My app';
       }, 1500);
 ;
     }
-    else{
+    else{ 
       document.body.style.backgroundColor ='white';
       setMode('light'); 
       showAlert("Light mode enable sucessfully","success")
@@ -68,7 +68,7 @@ function App() {
     )
     setTimeout(() => {
       setAlert(null)
-    }, 2200);
+    }, 1000);
   }
 
 
