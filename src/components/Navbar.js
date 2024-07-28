@@ -29,10 +29,15 @@ export default function Navbar(props) {
             </div> */}
             
           <div className="d-flex">
-              <div className="img" onClick={props.toggleMode}>  </div>
+              <div className="img" onClick={props.toggleMode}></div>
               <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'skyblue'}}><strong>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</strong></label>
-              
-              {/* </div> */}
+                
+            </div>
+          </div>
+        </div>
+        
+      </nav>
+      {/* </div> */}
               {/* <form className="d-flex" role="search">
                 <input
                   className="form-control me-2"
@@ -50,11 +55,6 @@ export default function Navbar(props) {
               <div className="bg-danger  mx-2"  onClick={()=>{props.toggleMode('danger')}}  style={{height:'30px',width:'30px',cursor:'pointer'}}></div> 
               <div className="bg-light  mx-2"  onClick={()=>{props.toggleMode('light')}}  style={{height:'30px',width:'30px',cursor:'pointer',border:'0.1px solid black'}}></div> 
               <div className="bg-dark  mx-2"  onClick={()=>{props.toggleMode('blue')}}  style={{height:'30px',width:'30px',cursor:'pointer', border:'1px solid white'}}></div>  */}
-            </div>
-          </div>
-        </div>
-        
-      </nav>
 
 
 

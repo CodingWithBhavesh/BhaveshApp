@@ -72,3 +72,19 @@
     opacity: 1;
   }
    */
+
+   .forMobileDarkMode{
+    position: absolute;
+    right: 15px;
+    top: 70px;
+   }
+   @media (max-width: 990px) {
+    .forMobileDarkMode {
+      display: inline-flex; /* Show on screens less than or equal to 600px */
+    }
+  }
+  @media (min-width: 991px) {
+    .forMobileDarkMode {
+      display: none;
+    }
+  }

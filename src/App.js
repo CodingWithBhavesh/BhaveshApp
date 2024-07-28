@@ -83,9 +83,9 @@ function App() {
       <Navbar title="Bhavesh's App" components={'Clones'} aboutText={'About'} mode={mode} about={About} toggleMode={toggleMode} />
       <Alert alert={alert} toggleMode={toggleMode}/>
 
-    <div className='container my-3'>
-      <TextForm showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/>
-      </div>
+    {/* <div className='container my-3'> */}
+      <TextForm toggleMode={toggleMode} showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/>
+      {/* </div> */}
     
     
     

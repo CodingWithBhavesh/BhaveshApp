@@ -165,6 +165,11 @@ export default function TextForm(props) {
 
   return (
     <>
+      <div className=" forMobileDarkMode">
+          <div className="img" onClick={props.toggleMode}>  </div>
+              {/* <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'skyblue'}}><strong>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</strong></label> */}
+          </div>
+
 {/*     <div className='container my-3' style={{color:{props.mode==='light'?'dark':'light'}}}>  ismaa color or any property drectly accept string value we should remove braces from it (unnecessary) */}
     <div className='container my-3' style={{color:props.mode==='light'?'black':'white'}}>
       <h1 className='mainheading' >{props.heading}</h1> {/* we can also use like that in all individiusll.. className={`text-${props.mode==='light'?'dark':'light'}`} it means agr modw light h to text-dark kr do vrna text-light kro {text-light,dark is property}*/}
