@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 // import About from '/components/About';
 // import { Link } from "react-router-dom";
 
-
 export default function Navbar(props) {
   return (
     <>
@@ -30,7 +29,9 @@ export default function Navbar(props) {
             
           <div className="d-flex">
               <div className="img" onClick={props.toggleMode}></div>
-              <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'skyblue'}}><strong>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</strong></label>
+              <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'skyblue'}}>
+                <strong>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</strong>
+              </label>
                 
             </div>
           </div>

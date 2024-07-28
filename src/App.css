@@ -2,7 +2,7 @@
 
 @media (max-width: 600px) {
     .mobile-only {
-      display: block;
+      display: inline;
       
     }
     
@@ -87,4 +87,8 @@
     .forMobileDarkMode {
       display: none;
     }
+  }
+  .imgClicked{
+    background-image: url(sunImg.jpeg);
+
   }
