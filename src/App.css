@@ -2,7 +2,7 @@
 
 @media (max-width: 600px) {
     .mobile-only {
-      display: block;
+      display: inline;
       
     }
     
