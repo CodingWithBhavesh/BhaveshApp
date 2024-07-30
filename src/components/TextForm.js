@@ -98,6 +98,38 @@ export default function TextForm(props) {
 
 
 
+    const capitalizeWords = () => {
+      const words = text.split(' ');
+    // "is "jasa word ka "i" capital na hoo
+      const capitalizedWords = words.map(word => {
+        if (word.length > 0 && word[0].toLowerCase() !== 'i') {
+          return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        } else {
+          return word; // Keep the word as it is if it starts with "i"
+        }
+      });
+      setText(capitalizedWords.join(' '));
+    };
+
+    const charMap = {
+      'a': '🅐', 'b': '🅑', 'c': '🅒', 'd': '🅓', 'e': '🅔', 'f': '🅕',
+      'g': '🅖', 'h': '🅗', 'i': '🅘', 'j': '🅙', 'k': '🅚', 'l': '🅛',
+      'm': '🅜', 'n': '🅝', 'o': '🅞', 'p': '🅟', 'q': '🅠', 'r': '🅡',
+      's': '🅢', 't': '🅣', 'u': '🅤', 'v': '🅥', 'w': '🅦', 'x': '🅧',
+      'y': '🅨', 'z': '🅩',
+      'A': '🅐', 'B': '🅑', 'C': '🅒', 'D': '🅓', 'E': '🅔', 'F': '🅕',
+      'G': '🅖', 'H': '🅗', 'I': '🅘', 'J': '🅙', 'K': '🅚', 'L': '🅛',
+      'M': '🅜', 'N': '🅝', 'O': '🅞', 'P': '🅟', 'Q': '🅠', 'R': '🅡',
+      'S': '🅢', 'T': '🅣', 'U': '🅤', 'V': '🅥', 'W': '🅦', 'X': '🅧',
+      'Y': '🅨', 'Z': '🅩',
+      '0': '⓪', '1': '①', '2': '②', '3': '③', '4': '④', '5': '⑤',
+      '6': '⑥', '7': '⑦', '8': '⑧', '9': '⑨',
+    };
+    const convertToSpecialFormat = () => {
+      const convertedText = Array.from(text).map(char => charMap[char] || char).join('');
+      setText(convertedText);
+    };
+  
     const handleCombineChange=(event)=>{
       handleChange(event);
       handleOnChange(event);
@@ -218,6 +250,8 @@ export default function TextForm(props) {
         <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleUndo}> Undooooo </button>        
         <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleRedo}> Redo</button>    
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={findDuplicates}>findDuplicates</button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={capitalizeWords}>Title Case </button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>BubblesFormat </button>
         {showConfirmation && (
         <div>
           <h3>Duplicate Lines Found:</h3>
@@ -244,7 +278,6 @@ export default function TextForm(props) {
       <h3 id='preview' >Preview</h3>
       <p id='preview-msg' >{text.length>0?text:"Enter something to get preview(In box above )"}</p>
 
-      {/* <PlagiarismChecker/> */}
           
 
     </div>
