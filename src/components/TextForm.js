@@ -65,6 +65,14 @@ export default function TextForm(props) {
         setRedoStack(redoStack.slice(1)); // Remove first entry from redo stack
       }
     };
+    const capitalizeWords = () => {
+      const words = text.split(' ');
+      const capitalizedWords = words.map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+      );
+      setText(capitalizedWords.join(' '));
+    };
+  
     const handleCombineChange=(event)=>{
       handleChange(event);
       handleOnChange(event);
@@ -182,6 +190,7 @@ export default function TextForm(props) {
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleUpClick2}>lowercase</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleClear}>Clear Text</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleCopy}>Copy text </button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={capitalizeWords}>Title Case </button>
         <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-1 my-1" onClick={handleUndo}> Undo </button>        
         <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-1 my-1" onClick={handleRedo}> Redo</button>    
         </div>
