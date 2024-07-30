@@ -239,7 +239,7 @@ export default function TextForm(props) {
     <div className='container my-3' style={{color:props.mode==='light'?'black':'white'}}>
       <h1 className='mainheading' >{props.heading}</h1> {/* we can also use like that in all individiusll.. className={`text-${props.mode==='light'?'dark':'light'}`} it means agr modw light h to text-dark kr do vrna text-light kro {text-light,dark is property}*/}
         <div className="mb-3">
-        <textarea spellCheck='false' style={textareaStyle()}   className='Form-control textArea' value={text} onChange={handleCombineChange} id='myBox'  rows='10' cols='100' ></textarea> 
+        <textarea spellCheck='false' style={textareaStyle()}   className='Form-control textArea' value={text} onChange={handleCombineChange} id='myBox'  rows='8' cols='150' ></textarea> 
          {/* we can use placeholder='Enter Text Here' but its color orashn krying */}
         </div>
         {/* style={{border:'1px solid white',color:props.mode==='light'?'blue':'white'}} ,style={{color:props.mode==='light'?'black':'white'}} */}
