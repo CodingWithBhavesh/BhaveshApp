@@ -88,3 +88,7 @@
       display: none;
     }
   }
+  .imgClicked{
+    background-image: url(sunImg.jpeg);
+
+  }

@@ -65,6 +65,39 @@ export default function TextForm(props) {
         setRedoStack(redoStack.slice(1)); // Remove first entry from redo stack
       }
     };
+
+    const [lines, setLines] = useState([]);
+    const [duplicates, setDuplicates] = useState([]);
+    const [showConfirmation, setShowConfirmation] = useState(false);
+    const [lineToRemove, setLineToRemove] = useState('');
+  
+
+    const findDuplicates = () => {
+      const linesArray = text.split('\n');
+      const seen = new Set();
+      const duplicatesSet = new Set();
+  
+      linesArray.forEach(line => {
+        if (seen.has(line)) {
+          duplicatesSet.add(line);
+        } else {
+          seen.add(line);
+        }
+      });
+  
+      setLines(linesArray);
+      setDuplicates(Array.from(duplicatesSet));
+      setShowConfirmation(duplicatesSet.size > 0);
+    };
+  
+    const handleRemoveDuplicate = () => {
+      const filteredLines = lines.filter(line => line !== lineToRemove);
+      setText(filteredLines.join('\n'));
+      setShowConfirmation(false);
+    };
+
+
+
     const capitalizeWords = () => {
       const words = text.split(' ');
     // "is "jasa word ka "i" capital na hoo
@@ -214,10 +247,26 @@ export default function TextForm(props) {
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleUpClick2}>lowercase</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleClear}>Clear Text</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleCopy}>Copy text </button>
+        <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleUndo}> Undooooo </button>        
+        <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleRedo}> Redo</button>    
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={findDuplicates}>findDuplicates</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={capitalizeWords}>Title Case </button>
-        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>convertToSpecialFormat </button>
-        <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-1 my-1" onClick={handleUndo}> Undo </button>        
-        <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-1 my-1" onClick={handleRedo}> Redo</button>    
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>BubblesFormat </button>
+        {showConfirmation && (
+        <div>
+          <h3>Duplicate Lines Found:</h3>
+          <ul>
+            {duplicates.map((line, index) => (
+              <li key={index}>
+                {line} <button onClick={() => {
+                  setLineToRemove(line);
+                  handleRemoveDuplicate();
+                }}>Remove</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
         </div>
     <div className="container my-3"  style={{color:props.mode==='light'?'black':'white'}}>
       <h2 className='heading-moreinf' >More Information about text above</h2>
@@ -228,6 +277,8 @@ export default function TextForm(props) {
     <div className="container my-1" style={{color:props.mode==='light'?'black':'white'}}>
       <h3 id='preview' >Preview</h3>
       <p id='preview-msg' >{text.length>0?text:"Enter something to get preview(In box above )"}</p>
+
+          
 
     </div>
     </>
