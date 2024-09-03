@@ -14,7 +14,7 @@ export default function Navbar(props) {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">  
               <li className="nav-item">
                 {/* <a className="nav-link " aria-current="page" href='/About'>{props.aboutText}</a> */}
               </li>
@@ -28,9 +28,9 @@ export default function Navbar(props) {
             </div> */}
             
           <div className="d-flex">
-              <div className="img" onClick={props.toggleMode}></div>
+              <div className="img hover" onClick={props.toggleMode}></div>
               <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'skyblue'}}>
-                <strong>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</strong>
+                <div className="hover"><strong>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</strong></div>
               </label>
                 
             </div>

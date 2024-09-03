@@ -129,9 +129,20 @@ export default function TextForm(props) {
       const convertedText = Array.from(text).map(char => charMap[char] || char).join('');
       setText(convertedText);
     };
+
+    // const convertToOriginal = (text) => {
+    //   const reversedMap = Object.fromEntries(
+    //     Object.entries(bubbleMap).map(([key, value]) => [value, key])
+    //   );
+    //   return text.split('').map(char => reversedMap[char] || char).join('');
+    // };
+
+    // const handleConvertToOriginal = () => {
+    //   setOutputText(convertToOriginal(inputText));
+    // };
   
     const handleCombineChange=(event)=>{
-      handleChange(event);
+      // handleChange(event);
       handleOnChange(event);
 
     }
@@ -237,7 +248,7 @@ export default function TextForm(props) {
 
 {/*     <div className='container my-3' style={{color:{props.mode==='light'?'dark':'light'}}}>  ismaa color or any property drectly accept string value we should remove braces from it (unnecessary) */}
     <div className='container my-3' style={{color:props.mode==='light'?'black':'white'}}>
-      <h1 className='mainheading' >{props.heading}</h1> {/* we can also use like that in all individiusll.. className={`text-${props.mode==='light'?'dark':'light'}`} it means agr modw light h to text-dark kr do vrna text-light kro {text-light,dark is property}*/}
+      <div className='heading-movement'><h1 className='mainheading ' >{props.heading}</h1></div> {/* we can also use like that in all individiusll.. className={`text-${props.mode==='light'?'dark':'light'}`} it means agr modw light h to text-dark kr do vrna text-light kro {text-light,dark is property}*/}
         <div className="mb-3">
         <textarea spellCheck='false' style={textareaStyle()}   className='Form-control textArea' value={text} onChange={handleCombineChange} id='myBox'  rows='8' cols='150' ></textarea> 
          {/* we can use placeholder='Enter Text Here' but its color orashn krying */}
@@ -252,6 +263,7 @@ export default function TextForm(props) {
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={findDuplicates}>findDuplicates</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={capitalizeWords}>Title Case </button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>BubblesFormat </button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>handleConvertToOriginal </button>
         {showConfirmation && (
         <div>
           <h3>Duplicate Lines Found:</h3>

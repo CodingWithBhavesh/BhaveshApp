@@ -13,6 +13,9 @@
       display: none;
     }
   }
+  button{
+    border: 3px solid red
+  }
   .mainheading{
     color:  cadetblue;
   }
@@ -92,3 +95,84 @@
     background-image: url(sunImg.jpeg);
 
   }
+
+.hover{
+  display: inline-block;
+  border-radius: 10px;
+  /* background-color: #f0f0f0; */
+  transition: transform 0.5s ease-in-out;
+}
+
+
+/* Apply hover effect only on devices with hover capability */
+@media (hover: hover) and (pointer: fine) {
+  .hover {
+    will-change: transform;
+  }
+
+  .hover:hover {
+    animation: moveUpDownInfinite 1.2s ease-in-out infinite;
+  }
+
+  @keyframes moveUpDownInfinite {
+    0% {
+      transform: translate(0);
+    }
+    25% {
+      transform: translate(-30px);
+    }
+    50% {
+      transform: translate(0);
+    }
+    75% {
+      transform: translate(-30px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+}
+/*  @keyframes moveUpDownInfinite {
+  0% {
+    transform: translate(0,0);
+  }
+  25% {
+    transform: translate(-10px,-10px);
+  }
+  50% {
+    transform: translate(0,0);
+  }
+  75% {
+    transform: translate(-10px,-10px);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+} */
+.heading-movement {
+  display: inline-block;
+  /* font-size: 2rem; */
+  /* background-color: #f0f0f0; */
+  padding: 10px;
+  border-radius: 5px;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 0; */
+  /* transform: translateY(-50%); */
+  white-space: nowrap;
+  /* Start the animation on page load */
+  animation: moves ease-out infinite;
+}
+
+@keyframes moveX {
+  0% {
+    transform: translateX(0) ;
+  }
+  50% {
+    transform: translateX(calc(100vw - 100%));
+  }
+  100% {
+    transform: translateX(0) ;
+  }
+}
