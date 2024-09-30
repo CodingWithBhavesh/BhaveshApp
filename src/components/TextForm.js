@@ -222,6 +222,16 @@ export default function TextForm(props) {
   //   console.log("User selected No");
   //   // Add your logic for No option here
   // }
+
+  const [showMore, setShowMore] = useState(false);
+
+  const handleMoreClick = () => {
+    setShowMore(true);
+  }
+  const handleLessClick = () => {
+    setShowMore(false); // Hide extra buttons
+  };
+
   
   let forCounting = 0.008*text.split(" ").filter((elemt)=>{ return elemt.length!==0 } ).length;
   let buttonStyle =()=>{
@@ -257,6 +267,7 @@ export default function TextForm(props) {
         <button  disabled={text.length===0}        style={buttonStyle()}    className=" button btn  btn-lg mx-2 my-1"           onClick={handleUpClick}>UPPERCASE</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleUpClick2}>lowercase</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleClear}>Clear Text</button>
+        {showMore ? (<> 
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleCopy}>Copy text </button>
         <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleUndo}> Undooooo </button>        
         <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleRedo}> Redo</button>    
@@ -264,6 +275,10 @@ export default function TextForm(props) {
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={capitalizeWords}>Title Case </button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>BubblesFormat </button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>handleConvertToOriginal </button>
+        <button onClick={handleLessClick }  className="changingButton button btn  mx-2 my-1">Show Less</button> {/* Show Less button */}
+        </>
+        
+      ): (<button className="changingButton button btn   mx-2 " onClick={handleMoreClick}>More</button>)}
         {showConfirmation && (
         <div>
           <h3>Duplicate Lines Found:</h3>
@@ -276,8 +291,11 @@ export default function TextForm(props) {
                 }}>Remove</button>
               </li>
             ))}
+            
           </ul>
+          
         </div>
+        
       )}
         </div>
     <div className="container my-3"  style={{color:props.mode==='light'?'black':'white'}}>
