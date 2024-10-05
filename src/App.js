@@ -4,6 +4,7 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
+import DiceGame from './components/game';
 // import Nopage from './components/Nopage';
 // import {
 //   BrowserRouter,
@@ -86,6 +87,7 @@ function App() {
     {/* <div className='container my-3'> */}
       <TextForm toggleMode={toggleMode} showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/>
       {/* </div> */}
+      <DiceGame/>
     
     
     

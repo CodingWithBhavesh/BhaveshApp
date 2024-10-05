@@ -1,0 +1,98 @@
+/* vv good css */
+Dice container
+.dice {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 20px auto;
+  perspective: 1000px;
+}
+
+/* Default dice face style */
+.face {
+  width: 100px;
+  height: 100px;
+  display: none; /* Hide all faces by default */
+  text-align: center;
+  line-height: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Show the current dice face */
+.face.show {
+  display: block; /* Only the current face will be shown */
+}
+
+/* Animations for rolling effect */
+.rolling {
+  animation: rolling-animation 1.2s infinite; /* Infinite roll effect */
+}
+
+/* Keyframes for dice rolling animation */
+/* Updated keyframes for smoother rolling */
+/* Updated keyframes for a smoother, more realistic rolling */
+/* Updated keyframes for smoother rolling with no disappearance */
+@keyframes roll {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  20% { transform: rotateX(120deg) rotateY(120deg); }
+  40% { transform: rotateX(240deg) rotateY(180deg); }
+  60% { transform: rotateX(360deg) rotateY(240deg); }
+  80% { transform: rotateX(480deg) rotateY(300deg); }
+  100% { transform: rotateX(600deg) rotateY(360deg); }
+}
+
+/* Apply the rolling animation with a slight ease */
+.rolling {
+  animation: roll 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+
+/* Scoreboard container */
+.score-container {
+  margin-top: 20px;
+  /* text-align: center; */
+}
+
+.score-pot {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Roll button style */
+.roll-button {
+  display: flex-box;
+  padding: 10px 20px ;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+.roll-button:hover {
+  background-color: #218838;
+}
+/* .game-container{
+text-align: center;
+} */
+/* .role-button-dice-flex{
+  display: flex  ;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+} */

@@ -4,6 +4,7 @@
 @media (max-width: 600px) {
     .mobile-only {
       display: inline;
+      /* rows :10 */
       
     }
     
@@ -14,6 +15,8 @@
       display: none;
     }
   }
+
+
 
   .changingButton{
     /* border: 1px solid black ;  */
@@ -184,3 +187,7 @@
     transform: translateX(0) ;
   }
 }
+
+
+
+
