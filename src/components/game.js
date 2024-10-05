@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './gamecss2.css'; // For animations
 
-const DiceGame = () => {
+const DiceGame = (props) => {
   const [score, setScore] = useState(0);
   const [currentDiceFace, setCurrentDiceFace] = useState(5);
   const [isRolling, setIsRolling] = useState(false);
@@ -35,7 +35,7 @@ const DiceGame = () => {
 
       <div className="score-container">
         <button onClick={rollDice} className="roll-button">Roll Dice</button>
-        <div className="score-pot">Score: {score}</div>
+        <div className="score-pot" >Score: {score}</div>
 
       </div>
     </div>

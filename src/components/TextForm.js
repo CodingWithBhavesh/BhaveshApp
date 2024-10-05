@@ -223,6 +223,7 @@ export default function TextForm(props) {
   //   console.log("User selected No");
   //   // Add your logic for No option here
   // }
+  
   const [rows, setRows] = useState(50);  // Default rows for larger screens
   const [cols, setCols] = useState(500); // Default cols for larger screens
 
@@ -230,7 +231,7 @@ export default function TextForm(props) {
     const adjustTextarea = () => {
       if (window.innerWidth <= 600) {
         setRows(10);  // Set rows to 10 for mobile
-        setCols(70);  // Set cols to 30 for mobile
+        setCols(45);  // Set cols to 30 for mobile
       } else {
         setRows(9);   // Set default rows for larger screens
         setCols(130);  // Set default cols for larger screens
@@ -274,7 +275,8 @@ export default function TextForm(props) {
     <>
       <div className=" forMobileDarkMode">
           <div className="img" onClick={props.toggleMode}>  </div>
-              {/* <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'skyblue'}}><strong>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</strong></label> */}
+              {/* <label className=" darkModeName form-check-label"   h
+              tmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'skyblue'}}><strong>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</strong></label> */}
           </div>
 
 {/*     <div className='container my-3' style={{color:{props.mode==='light'?'dark':'light'}}}>  ismaa color or any property drectly accept string value we should remove braces from it (unnecessary) */}
