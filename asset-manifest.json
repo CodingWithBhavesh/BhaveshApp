@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/BhaveshApp/static/css/main.c20a8122.css",
-    "main.js": "/BhaveshApp/static/js/main.11a61564.js",
-    "static/js/317.46da3abf.chunk.js": "/BhaveshApp/static/js/317.46da3abf.chunk.js",
+    "main.css": "/BhaveshApp/static/css/main.f6b40708.css",
+    "main.js": "/BhaveshApp/static/js/main.19dcd303.js",
+    "static/js/453.ed3810f9.chunk.js": "/BhaveshApp/static/js/453.ed3810f9.chunk.js",
     "index.html": "/BhaveshApp/index.html",
     "static/media/photo.svg": "/BhaveshApp/static/media/photo.2cc123902a90813811af.svg",
-    "main.c20a8122.css.map": "/BhaveshApp/static/css/main.c20a8122.css.map",
-    "main.11a61564.js.map": "/BhaveshApp/static/js/main.11a61564.js.map",
-    "317.46da3abf.chunk.js.map": "/BhaveshApp/static/js/317.46da3abf.chunk.js.map"
+    "main.f6b40708.css.map": "/BhaveshApp/static/css/main.f6b40708.css.map",
+    "main.19dcd303.js.map": "/BhaveshApp/static/js/main.19dcd303.js.map",
+    "453.ed3810f9.chunk.js.map": "/BhaveshApp/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c20a8122.css",
-    "static/js/main.11a61564.js"
+    "static/css/main.f6b40708.css",
+    "static/js/main.19dcd303.js"
   ]
 }
