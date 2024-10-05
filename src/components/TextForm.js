@@ -229,9 +229,9 @@ export default function TextForm(props) {
 
   useEffect(() => {
     const adjustTextarea = () => {
-      if (window.innerWidth <= 600) {
+      if (window.innerWidth <= 700) {
         setRows(10);  // Set rows to 10 for mobile
-        setCols(45);  // Set cols to 30 for mobile
+        setCols(42);  // Set cols to 30 for mobile
       } else {
         setRows(9);   // Set default rows for larger screens
         setCols(130);  // Set default cols for larger screens
