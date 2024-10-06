@@ -224,25 +224,46 @@ export default function TextForm(props) {
   //   // Add your logic for No option here
   // }
   
-  const [rows, setRows] = useState(50);  // Default rows for larger screens
-  const [cols, setCols] = useState(500); // Default cols for larger screens
+  // const [rows, setRows] = useState(50);  // Default rows for larger screens
+  // const [cols, setCols] = useState(500); // Default cols for larger screens
+
+  // useEffect(() => {
+  //   const adjustTextarea = () => {
+  //     if (window.innerWidth <= 700) {
+  //       setRows(10);  // Set rows to 10 for mobile
+  //       setCols(42);  // Set cols to 30 for mobile
+  //     } else {
+  //       setRows(9);   // Set default rows for larger screens
+  //       setCols(130);  // Set default cols for larger screens
+  //     }
+  //   };
+
+  //   window.addEventListener('resize', adjustTextarea);
+  //   adjustTextarea(); // Call on initial load
+
+  //   return () => window.removeEventListener('resize', adjustTextarea);
+  // }, []);
+
+  const [rows, setRows] = useState(10);
+  const [cols, setCols] = useState(30);
 
   useEffect(() => {
-    const adjustTextarea = () => {
-      if (window.innerWidth <= 700) {
-        setRows(10);  // Set rows to 10 for mobile
-        setCols(42);  // Set cols to 30 for mobile
-      } else {
-        setRows(9);   // Set default rows for larger screens
-        setCols(130);  // Set default cols for larger screens
-      }
-    };
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
 
-    window.addEventListener('resize', adjustTextarea);
-    adjustTextarea(); // Call on initial load
+    // Set base size for normal PC
+    const baseWidth = 900;  
+    const baseHeight = 700; 
 
-    return () => window.removeEventListener('resize', adjustTextarea);
+    // Adjust rows and columns based on screen size
+    const calculatedCols = Math.floor((screenWidth / baseWidth) * 30);
+    const calculatedRows = Math.floor((screenHeight / baseHeight) * 10);
+
+    setCols(calculatedCols > 15 ? calculatedCols : 15); // Minimum cols for PC
+    setRows(calculatedRows > 5 ? calculatedRows : 5);   // Minimum rows for phone
   }, []);
+
+  
 
   const [showMore, setShowMore] = useState(false);
 
@@ -283,7 +304,7 @@ export default function TextForm(props) {
     <div className='container my-3' style={{color:props.mode==='light'?'black':'white'}}>
       <div className='heading-movement'><h1 className='mainheading ' >{props.heading}</h1></div> {/* we can also use like that in all individiusll.. className={`text-${props.mode==='light'?'dark':'light'}`} it means agr modw light h to text-dark kr do vrna text-light kro {text-light,dark is property}*/}
         <div className="mb-3">
-        <textarea spellCheck='false' style={textareaStyle()}   className='Form-control textArea' value={text} onChange={handleCombineChange} id='myBox'  rows={rows} cols={cols} ></textarea> 
+        <textarea spellCheck='false' style={{ ...textareaStyle() , width: "100%" }}   className='Form-control textArea' value={text} onChange={handleCombineChange} id='myBox'  rows={rows} cols={cols} ></textarea> 
          {/* we can use placeholder='Enter Text Here' but its color orashn krying */}
         </div>
         {/* style={{border:'1px solid white',color:props.mode==='light'?'blue':'white'}} ,style={{color:props.mode==='light'?'black':'white'}} */}
@@ -328,8 +349,8 @@ export default function TextForm(props) {
       {/* {forCounting variable is defned above} thats is 0.008*text.split(" ").filter((elemt)=>{ return elemt.length!==0 } ).length */} | {forCounting} Minutes and {forCounting*60} Second take to read this.</p>
     </div>
     <div className="container my-1" style={{color:props.mode==='light'?'black':'white'}}>
-      <h3 id='preview' >Preview</h3>
-      <p id='preview-msg' >{text.length>0?text:"Enter something to get preview(In box above )"}</p>
+      <h3 id='preview' >Preview:</h3>
+      <div id='preview-msg' style={{overflow: "hidden", whiteSpace: "normal"}} >{text.length>0?text:"Enter something to get preview(In box above )"}</div>
 
           
 

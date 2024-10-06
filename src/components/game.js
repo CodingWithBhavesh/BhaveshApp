@@ -20,7 +20,7 @@ const DiceGame = (props) => {
 
   return (<>
     <div className="game-container container">
-    <h1>Dice Roll Game</h1>
+    <h1 style={{color:"   cadetblue"}}>Dice Roll Game</h1>
       {/* <div className='role-button-dice-flex'> */}
 
       <div className={`dice ${isRolling ? 'rolling' : ''}`}>
@@ -35,7 +35,7 @@ const DiceGame = (props) => {
 
       <div className="score-container">
         <button onClick={rollDice} className="roll-button">Roll Dice</button>
-        <div className="score-pot" >Score: {score}</div>
+        <div className="score-pot" style={{color:"grey"}} >Score: {score}</div>
 
       </div>
     </div>
