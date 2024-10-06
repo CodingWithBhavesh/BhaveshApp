@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 
 
-export default function TextForm(props) {
+const TextForm =  (props) => {
   const [text,setText] = useState('');
   // text="new test"wrong way to change state
 
@@ -358,3 +358,5 @@ export default function TextForm(props) {
     </>
   )
 };
+
+export default TextForm;

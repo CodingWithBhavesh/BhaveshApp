@@ -1,13 +1,14 @@
 import React from 'react'
 
-export default function About(props) {
+ const About = (props) =>{
   return (
-    <div className='container' style={{color:props.mode==='light'?'black':'white'}}>
+    <div className='Full-about'>
+    <div className='container' >
     <h1>About US</h1>
     <div className="container">
     <div>
         <div className  ="accordion" id="accordionPanelsStayOpenExample"  >
-  <div className  ="accordion-item" style={{backgroundColor:props.mode==='light'?'white':'black'}}>
+  <div className  ="accordion-item" style={{backgroundColor:props.mode==='light'?'black':'white'}}>
     <h2 className  ="accordion-header">
       <button className  ="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
         Accordion Item #1
@@ -48,5 +49,7 @@ export default function About(props) {
       
     </div>
     </div>
+    </div>
   )
-}
+};
+export default About;

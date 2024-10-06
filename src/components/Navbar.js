@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 
-export default function Navbar(props) {
+const Navbar =(props) =>{
   return (
     <>
       <nav
@@ -16,10 +16,10 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">  
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to='/About'>{props.aboutText}</Link>
+                <Link className="nav-link " aria-current="page" to='/about'>{props.aboutText}</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">{props.components}</Link>
+                <Link className="nav-link" to="/service">{props.components}</Link>
               </li>
             </ul>
 
@@ -63,7 +63,8 @@ export default function Navbar(props) {
       
     </>
   );
-}
+};
+export default Navbar;
 
 Navbar.propTypes = { title: PropTypes.string.isRequired };
 
