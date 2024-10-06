@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/BhaveshApp/static/css/main.f6b40708.css",
-    "main.js": "/BhaveshApp/static/js/main.a165d20d.js",
+    "main.css": "/BhaveshApp/static/css/main.32d92aa1.css",
+    "main.js": "/BhaveshApp/static/js/main.68c33170.js",
     "static/js/453.ed3810f9.chunk.js": "/BhaveshApp/static/js/453.ed3810f9.chunk.js",
     "index.html": "/BhaveshApp/index.html",
     "static/media/photo.svg": "/BhaveshApp/static/media/photo.2cc123902a90813811af.svg",
-    "main.f6b40708.css.map": "/BhaveshApp/static/css/main.f6b40708.css.map",
-    "main.a165d20d.js.map": "/BhaveshApp/static/js/main.a165d20d.js.map",
+    "main.32d92aa1.css.map": "/BhaveshApp/static/css/main.32d92aa1.css.map",
+    "main.68c33170.js.map": "/BhaveshApp/static/js/main.68c33170.js.map",
     "453.ed3810f9.chunk.js.map": "/BhaveshApp/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6b40708.css",
-    "static/js/main.a165d20d.js"
+    "static/css/main.32d92aa1.css",
+    "static/js/main.68c33170.js"
   ]
 }
