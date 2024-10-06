@@ -45,6 +45,8 @@
     background-image: url(photo.svg);
     background-size:cover;
     cursor: pointer;
+    -webkit-user-drag: none;
+    user-select: none;
     /* object-fit: cover; */
     }
    .nighModeImg{
@@ -53,6 +55,7 @@
    .darkModeName{
     display: flex;
     align-items: center;
+    user-select: none;
    }
 
 /* 
