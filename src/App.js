@@ -12,7 +12,7 @@ import { BrowserRouter as Route, Router, Routes } from 'react-router-dom';
 
 
 
-const App = () =>  {
+const App = (props) =>  {
   const [mode ,setMode] = useState('light');//wheather which mode is activated
 
   // const removeBgcolor =()=>{  
@@ -68,6 +68,13 @@ const App = () =>  {
   }
   
 
+  const [currentView, setCurrentView] = useState('notesForm'); // State to manage current view
+
+  // Function to switch views
+  const switchView = (view) => {
+    setCurrentView(view);
+};
+
 
   
 
@@ -77,13 +84,26 @@ const App = () =>  {
     <>
       <Navbar title="Bhavesh's App" components={'Clones'} aboutText={'About'} mode={mode} about={About} toggleMode={toggleMode} />
       <Alert alert={alert} toggleMode={toggleMode}/>
+      <TextForm toggleMode={toggleMode} showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/>
+      <hr></hr>
+      
+      
+      {/* Buttons to switch views */}
+      <div className=" container my-4 ">
+      <h1 style={{padding:"20px 0 20px",color:props.mode==='light'?'white':'black'}}>Some other feature:</h1>
+          <button className="btn btn-primary btn-lg mx-2" onClick={() => switchView('DiceGame')}>DiceGame</button>
+          <button className="btn btn-primary  btn-lg mx-2" onClick={() => switchView('About')}>About</button>
+      </div>
+
+
+      {/* Conditional rendering based on currentView state */}
+      {currentView === 'DiceGame' && <DiceGame />}
+      {currentView === 'About' && <About  />}
       
 
-      <TextForm toggleMode={toggleMode} showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/>
 
-      <DiceGame/> 
- 
-      <About/>
+      {/* <DiceGame/> 
+      <About/> */}
     
     
     
