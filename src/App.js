@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import About from './components/About';
+import About from './components/about';
 import DiceGame from './components/game';
 import { BrowserRouter as Route, Router, Routes } from 'react-router-dom';
 // import Nopage from './components/Nopage';
