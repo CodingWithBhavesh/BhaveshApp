@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/about';
 import DiceGame from './components/game';
-import { BrowserRouter as Route, Router, Routes } from 'react-router-dom';
 // import Nopage from './components/Nopage';
 
 
@@ -68,12 +67,18 @@ const App = (props) =>  {
   }
   
 
-  const [currentView, setCurrentView] = useState('notesForm'); // State to manage current view
-
+  const [currentView, setCurrentView] = useState('TextForm'); // Default view set to TextForm
+  
   // Function to switch views
   const switchView = (view) => {
     setCurrentView(view);
 };
+
+
+// const seeAlert = (message, type) => {
+//   setAlert({ msg: message, type: type });
+//   setTimeout(() => setAlert(null), 2000);
+// };
 
 
   
@@ -82,24 +87,18 @@ const App = (props) =>  {
   return (
 
     <>
-      <Navbar title="Bhavesh's App" components={'Clones'} aboutText={'About'} mode={mode} about={About} toggleMode={toggleMode} />
+      <Navbar title="Bhavesh's App" switchView={switchView}  mode={mode} about={About} toggleMode={toggleMode} />
       <Alert alert={alert} toggleMode={toggleMode}/>
-      <TextForm toggleMode={toggleMode} showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/>
-      <hr></hr>
+      {/* <TextForm toggleMode={toggleMode} showAlert={showAlert} heading="Yha Nicha Daloo" mode={mode}/> */}
       
       
-      {/* Buttons to switch views */}
-      <div className=" container my-4 ">
-      <h1 style={{padding:"20px 0 20px",color:props.mode==='light'?'white':'black'}}>Some other feature:</h1>
-          <button className="btn btn-primary btn-lg mx-2" onClick={() => switchView('DiceGame')}>DiceGame</button>
-          <button className="btn btn-primary  btn-lg mx-2" onClick={() => switchView('About')}>About</button>
-      </div>
-
 
       {/* Conditional rendering based on currentView state */}
-      {currentView === 'DiceGame' && <DiceGame />}
-      {currentView === 'About' && <About  />}
-      
+      <div className="container my-4">
+         {currentView === 'TextForm' && <TextForm toggleMode={toggleMode} showAlert={showAlert} heading="Enter text to analyze" mode={mode} />}
+         {currentView === 'DiceGame' && <DiceGame />}
+         {currentView === 'About' && <About />}
+     </div>      
 
 
       {/* <DiceGame/> 

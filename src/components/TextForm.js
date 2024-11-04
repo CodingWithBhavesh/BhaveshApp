@@ -313,8 +313,8 @@ const TextForm =  (props) => {
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleClear}>Clear Text</button>
         {showMore ? (<> 
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleCopy}>Copy text </button>
-        <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleUndo}> Undooooo </button>        
-        <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleRedo}> Redo</button>    
+        <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleUndo} onChange={handleChange}> Undooooo </button>        
+        <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleRedo} onChange={handleChange}> Redo</button>    
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={findDuplicates}>findDuplicates</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={capitalizeWords}>Title Case </button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>BubblesFormat </button>
@@ -350,7 +350,7 @@ const TextForm =  (props) => {
     </div>
     <div className="container my-1" style={{color:props.mode==='light'?'black':'white'}}>
       <h3 id='preview' >Preview:</h3>
-      <div id='preview-msg' style={{overflow: "hidden", whiteSpace: "normal"}} >{text.length>0?text:"Enter something to get preview(In box above )"}</div>
+      <div id='preview-msg' style={{overflow: "hidden", whiteSpace: "normal", margin: "10px 0 10px"}} >{text.length>0?text:"Enter something to get preview(In box above )"}</div>
 
           
 

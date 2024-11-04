@@ -40,7 +40,7 @@ import React from 'react'
     </h2>
     <div id="panelsStayOpen-collapseThree" className  ="accordion-collapse collapse">
       <div className  ="accordion-body">
-        <strong>This is the third item's accordion body.</strong> 
+        <strong>This is the third item's accordion body.</strong>   
       </div>
     </div>
   </div>

@@ -1,6 +1,5 @@
 import React from "react"; 
 import PropTypes from "prop-types";
-import { Link } from 'react-router-dom';
 
 const Navbar =(props) =>{
   return (
@@ -8,7 +7,7 @@ const Navbar =(props) =>{
       <nav
         className={`navbar navbar-expand-lg bg-body-tertiary`} data-bs-theme={props.mode}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/BhaveshApp">  {props.title} </Link>
+          <a className="navbar-brand" href="/BhaveshApp">  {props.title} </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  ria-expanded="false"  aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -16,20 +15,23 @@ const Navbar =(props) =>{
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">  
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page" to='/about'>{props.aboutText}</Link>
+              <button className="nav-link" onClick={() => props.switchView('TextForm')}>Text Form</button>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/service">{props.components}</Link>
+              <button className="nav-link" onClick={() => props.switchView('DiceGame')}>Dice Game</button>
+              </li>
+              <li className="nav-item">
+              <button className="nav-link" onClick={() => props.switchView('About')}>About</button>
               </li>
             </ul>
+            {/* <button className="btn btn-primary mx-2" onClick={() => props.switchView('TextForm')}>Text Form</button>
+            <button className="btn btn-primary mx-2" onClick={() => props.switchView('DiceGame')}>Dice Game</button>
+            <button className="btn btn-primary mx-2" onClick={() => props.switchView('About')}>About</button> */}
 
-        {/* <div className="container1">
-            <div className="hover-text" style={{color:props.mode==='light'?'black':'white'}}> Click here to enter dark or light</div>
-            </div> */}
             
           <div className="d-flex">
               <div className="img hover" onClick={props.toggleMode}></div>
-              <label className=" darkModeName form-check-label"   htmlFor="flexSwitchCheckDefault" style={{color:props.mode==='light'?'black':'skyblue'}}>
+              <label className=" darkModeName form-check-label"   htmlFor="flexprops.switchCheckDefault" style={{color:props.mode==='light'?'black':'skyblue'}}>
                 <div className="hover"><strong>{props.mode==='light'?'Enable Dark Mode':'Dark Mode Enabled'}</strong></div>
               </label>
                 

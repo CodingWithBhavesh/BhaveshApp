@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from 'react-router-dom';  // Import BrowserRouter
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,9 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// Register the service worker for offline functionality
+serviceWorkerRegistration.register();
 
 
 
