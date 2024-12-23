@@ -23,6 +23,9 @@ const Navbar =(props) =>{
               <li className="nav-item">
               <button className="nav-link" onClick={() => props.switchView('About')}>About</button>
               </li>
+              <li className="nav-item">
+              <a className="nav-link" href="https://codingwithbhavesh.github.io/Lock_information/" target="_blank">LockInfo</a>
+              </li>
             </ul>
             {/* <button className="btn btn-primary mx-2" onClick={() => props.switchView('TextForm')}>Text Form</button>
             <button className="btn btn-primary mx-2" onClick={() => props.switchView('DiceGame')}>Dice Game</button>

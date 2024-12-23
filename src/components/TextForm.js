@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-
-
-
-
 const TextForm =  (props) => {
   const [text,setText] = useState('');
   // text="new test"wrong way to change state
@@ -27,12 +23,12 @@ const TextForm =  (props) => {
       let newText= ' ';
       setText(newText);
       props.showAlert("Clear text Successfully","success");
-  }
+    }
 
-  const handleCopy = ()=>{
-    navigator.clipboard.writeText(text);
-    props.showAlert('Text Copied;','sucess')
-  }
+    const handleCopy = ()=>{
+      navigator.clipboard.writeText(text);
+      props.showAlert('Text Copied;','sucess')
+    }
 
 
 
@@ -112,35 +108,35 @@ const TextForm =  (props) => {
       setText(capitalizedWords.join(' '));
     };
 
-    const charMap = {
-      'a': '🅐', 'b': '🅑', 'c': '🅒', 'd': '🅓', 'e': '🅔', 'f': '🅕',
-      'g': '🅖', 'h': '🅗', 'i': '🅘', 'j': '🅙', 'k': '🅚', 'l': '🅛',
-      'm': '🅜', 'n': '🅝', 'o': '🅞', 'p': '🅟', 'q': '🅠', 'r': '🅡',
-      's': '🅢', 't': '🅣', 'u': '🅤', 'v': '🅥', 'w': '🅦', 'x': '🅧',
-      'y': '🅨', 'z': '🅩',
-      'A': '🅐', 'B': '🅑', 'C': '🅒', 'D': '🅓', 'E': '🅔', 'F': '🅕',
-      'G': '🅖', 'H': '🅗', 'I': '🅘', 'J': '🅙', 'K': '🅚', 'L': '🅛',
-      'M': '🅜', 'N': '🅝', 'O': '🅞', 'P': '🅟', 'Q': '🅠', 'R': '🅡',
-      'S': '🅢', 'T': '🅣', 'U': '🅤', 'V': '🅥', 'W': '🅦', 'X': '🅧',
-      'Y': '🅨', 'Z': '🅩',
-      '0': '⓪', '1': '①', '2': '②', '3': '③', '4': '④', '5': '⑤',
-      '6': '⑥', '7': '⑦', '8': '⑧', '9': '⑨',
-    };
-    const convertToSpecialFormat = () => {
-      const convertedText = Array.from(text).map(char => charMap[char] || char).join('');
-      setText(convertedText);
-    };
+    
 
-    // const convertToOriginal = (text) => {
-    //   const reversedMap = Object.fromEntries(
-    //     Object.entries(bubbleMap).map(([key, value]) => [value, key])
-    //   );
-    //   return text.split('').map(char => reversedMap[char] || char).join('');
-    // };
+  const charMap = {
+    'a': '🅐', 'b': '🅑', 'c': '🅒', 'd': '🅓', 'e': '🅔', 'f': '🅕',
+    'g': '🅖', 'h': '🅗', 'i': '🅘', 'j': '🅙', 'k': '🅚', 'l': '🅛',
+    'm': '🅜', 'n': '🅝', 'o': '🅞', 'p': '🅟', 'q': '🅠', 'r': '🅡',
+    's': '🅢', 't': '🅣', 'u': '🅤', 'v': '🅥', 'w': '🅦', 'x': '🅧',
+    'y': '🅨', 'z': '🅩',
+    'A': '🅐', 'B': '🅑', 'C': '🅒', 'D': '🅓', 'E': '🅔', 'F': '🅕',
+    'G': '🅖', 'H': '🅗', 'I': '🅘', 'J': '🅙', 'K': '🅚', 'L': '🅛',
+    'M': '🅜', 'N': '🅝', 'O': '🅞', 'P': '🅟', 'Q': '🅠', 'R': '🅡',
+    'S': '🅢', 'T': '🅣', 'U': '🅤', 'V': '🅥', 'W': '🅦', 'X': '🅧',
+    'Y': '🅨', 'Z': '🅩',
+    '0': '⓪', '1': '①', '2': '②', '3': '③', '4': '④', '5': '⑤',
+    '6': '⑥', '7': '⑦', '8': '⑧', '9': '⑨',
+  };
 
-    // const handleConvertToOriginal = () => {
-    //   setOutputText(convertToOriginal(inputText));
-    // };
+  const [originalText, setOriginalText] = useState('');
+
+  const convertToSpecialFormat = () => {
+    setOriginalText(text); // Save the current text before converting
+    const convertedText = Array.from(text).map(char => charMap[char] || char).join('');
+    setText(convertedText);
+  };
+
+  const undoConversion = () => {
+    setText(originalText); // Restore the original text
+  };
+
   
     const handleCombineChange=(event)=>{
       // handleChange(event);
@@ -167,8 +163,6 @@ const TextForm =  (props) => {
     }
   }
   
-
-
   const handleOnChange =(event)=>{
     // console.log('On Change');
     setText(event.target.value)
@@ -314,11 +308,11 @@ const TextForm =  (props) => {
         {showMore ? (<> 
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={handleCopy}>Copy text </button>
         <button  disabled={history.length === 0}   style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleUndo} onChange={handleChange}> Undooooo </button>        
-        <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button mobile-only btn btn-lg mx-2 my-1" onClick={handleRedo} onChange={handleChange}> Redo</button>    
+        <button  disabled={redoStack.length === 0} style={buttonStyle()}    className="button             btn btn-lg mx-2 my-1" onClick={handleRedo} onChange={handleChange}> Redo</button>    
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={findDuplicates}>findDuplicates</button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={capitalizeWords}>Title Case </button>
         <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>BubblesFormat </button>
-        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={convertToSpecialFormat}>handleConvertToOriginal </button>
+        <button  disabled={text.length===0}        style={buttonStyle()}    className="button btn btn-lg mx-2 my-1"             onClick={undoConversion}>handleConvertToOriginal </button>
         <button onClick={handleLessClick }  className="changingButton button btn  mx-2 my-1">Show Less</button> {/* Show Less button */}
         </>
         
