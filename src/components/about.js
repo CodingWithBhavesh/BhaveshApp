@@ -67,7 +67,7 @@ const About = (props) => {
                     aria-expanded="false"
                     aria-controls="panelsStayOpen-collapseThree"
                   >
-                    My hapiness
+                    My family
                   </button>
                 </h2>
                 <div
@@ -76,8 +76,8 @@ const About = (props) => {
                 >
                   <div className="accordion-body">
                     <strong>
-                      I dedicate all hapiness to my faimly and my bestt friend
-                      KHUSHI❤️😍💕.
+                      I dedicate all hapiness to my faimly and my friend
+                      KHUSHI.
                     </strong>
                   </div>
                 </div>
